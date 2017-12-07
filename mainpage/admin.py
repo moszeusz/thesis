@@ -1,11 +1,14 @@
 from django.contrib import admin
 
-from mainpage.models import UploadFile
+from .models import UploadFile
 
 
 class UploadFileAdmin(admin.ModelAdmin):
-    fields = ["file"]
-    # list_display = ('file')
+    # fields = ['file']
+    search_fields = ('file',)
+    list_per_page = 25
+    list_display = ('file', 'as_photo',)
+    ordering = ('-file',)  # sortuj od końca
 
 
 admin.site.register(UploadFile, UploadFileAdmin)

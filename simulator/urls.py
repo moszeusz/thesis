@@ -1,7 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+
+from mainpage.views import UploadFileListView, UploadFileView
 
 # urlpatterns = patterns('',
 #     # Examples:
@@ -17,6 +19,8 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^files/$', UploadFileListView.as_view(), name='uploadfile-list'),
+    url(r'$', UploadFileView.as_view()),  # gdy dodany, brak podglądu plików statycznych w panelu admina
 ]
 
 if settings.DEBUG:

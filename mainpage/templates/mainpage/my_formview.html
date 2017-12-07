@@ -1,0 +1,25 @@
+<head>
+    <meta charset="UTF-8">
+    <title>przetwarzanie audio</title>
+</head>
+
+{% extends "base.html" %}
+
+<body>
+    {% block 'content' %} <!-- nadpisuje block 'content' z base.html -->
+    <h1>
+        To jest przykładowy formularz
+    </h1>
+    <form method="post" action='' enctype="multipart/form-data">
+        {% csrf_token %}  <!-- Cross Site Request Forgery -->
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br><button type="submit">Wyślij</button>
+        {% csrf_token %}
+    </form>
+    {% endblock %}
+</body>
+
+
+

@@ -1,14 +1,20 @@
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.utils.safestring import mark_safe
 
 
 class UploadFile(models.Model):
-    file = models.FileField(upload_to='%d %b %Y/%H:%M')
-    # topic = models.ForeignKey('Topic', null=True)
-
-    def __str__(self):
-        return self.file.name  # + 'modified'
+    file = models.FileField(verbose_name=_("file"), upload_to='%d %b %Y/%H:%M')  # "_()" służy do tłumaczenia tekstu
+    # def __str__(self):
+    #     return self.file.name  # + 'modified'
 
     def as_photo(self):
-        return mark_safe(u'<img src="%s" width="150" height="150" />' % self.file.url)
-    as_photo.short_description = 'Image'
+        if self.file.url:
+            return mark_safe(u'<img src="%s" width="150" height="auto" />' % self.file.url)
+        else:
+            pass
+    as_photo.short_description = 'image'
+
+    class Meta:
+        verbose_name = _('plik')
+        verbose_name_plural = _('pliki')

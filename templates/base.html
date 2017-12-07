@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Szablon bazowy</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <style>
+        .select
+        {
+            float: left;
+        }
+
+        body
+        {
+            background-color: rgb(188, 0, 55);
+            color: rgb(0, 0, 120);
+            font-size: 24px;
+            font-family: 'Amatic SC', cursive;
+        }
+
+        h1
+        {
+            padding: 0.5em;
+            color: white;
+            text-align: center;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+
+<body>
+    {% block 'content' %}
+    <h1>
+        To jest szablon bazowy
+    </h1>
+    {% endblock %}
+</body>
+</html>

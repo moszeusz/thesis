@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title>wysłane pliki</title>
+</head>
+
+{% extends "base.html" %}
+
+<body>
+    {% block 'content' %} <!-- nadpisuje block 'content' z base.html -->
+    <h1>
+        tu na razie będzie lista wysłanych plików
+    </h1>
+    <!--<font size="4">-->
+    <ul>
+        <li>coś</li>
+        <li>a tu drugie coś</li>
+        <li>tu jeszcze nie wiem co</li>
+        {% for upload_file in object_list %}
+        <li> {{ upload_file.file }} </li>
+        {% endfor %}
+    </ul>
+    <!--</font>-->
+    {% endblock %}
+</body>
+
+
+
