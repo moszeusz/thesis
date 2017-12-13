@@ -9,7 +9,7 @@ class UploadFileForm(forms.ModelForm):
         model = UploadFile
         fields = ('file',)
 
-# TODO w dokumentacji pod "customizing validation"
+# TODO (w dokumentacji pod "customizing validation")
     # def clean_file(self):
     #     data = self.cleaned_data['file']
     #     if 'mp3' not in data:

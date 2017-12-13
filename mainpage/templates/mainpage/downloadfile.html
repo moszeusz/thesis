@@ -1,0 +1,18 @@
+<head>
+    <meta charset="UTF-8">
+    <title>pobierz plik</title>
+</head>
+
+{% extends "base.html" %}
+
+<body>
+    {% block 'content' %} <!-- nadpisuje block 'content' z base.html -->
+    <h1>
+        miłych doznań!
+    </h1>
+
+    <button class="button" onclick="window.open('/media/06 Aug 2017/22:28/Activ_-_Visez__.mp3')" style="height:3.5em;">Pobierz przetworzony plik</button>
+    <!--<input type="button" value="Download" onclick="window.open('download_my_pdf')">-->
+
+    {% endblock %}
+</body>
