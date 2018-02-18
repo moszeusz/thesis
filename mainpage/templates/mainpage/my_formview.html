@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title>przetwarzanie audio</title>
+    <title>symulator</title>
 </head>
 
 {% extends "base.html" %}
@@ -8,8 +8,11 @@
 <body>
     {% block 'content' %} <!-- nadpisuje block 'content' z base.html -->
     <h1>
-        To jest przykładowy formularz
+        Symulator zwierzęcej percepcji dźwięku
     </h1>
+    wyślij próbkę dźwięku, którą chcesz przetworzyć
+    <br />
+    <br />
     <form method="post" action='' enctype="multipart/form-data">
         {% csrf_token %}  <!-- Cross Site Request Forgery -->
         <table>

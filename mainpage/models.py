@@ -4,9 +4,11 @@ from django.utils.safestring import mark_safe
 
 
 class UploadFile(models.Model):
-    file = models.FileField(verbose_name=_("file"), upload_to='%d %b %Y/%H:%M')  # "_()" służy do tłumaczenia tekstu
-    # def __str__(self):
-    #     return self.file.name  # + 'modified'
+    # file = models.FileField(verbose_name=_("file"), upload_to='%d %b %Y/%H:%M')
+    file = models.FileField(verbose_name=_("plik"),)  # "_()" sluzy do tlumaczenia tekstu
+
+    def __str__(self):
+        return self.file
 
     def as_photo(self):
         if self.file.url:

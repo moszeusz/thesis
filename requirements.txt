@@ -1,3 +1,5 @@
-#pip freeze > requirements.txt
+# pip freeze > requirements.txt
 
-Django==1.9.5
+Django==1.11.8
+pytz==2017.3
+matlab==R2016A
